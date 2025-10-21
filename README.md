@@ -78,7 +78,6 @@ from pyspark.sql import DataFrame
 def get_product_category_pairs(products: DataFrame, categories: DataFrame, product_category_links: DataFrame) -> DataFrame:
     # Сначала соединяем product_category_links с категориями по category_id
     links_with_cat = product_category_links.join(categories, "category_id", "left")
-    
     # Потом соединяем все продукты с этими связями по product_id, оставляя все продукты (Left Join)
     result = products.join(links_with_cat, "product_id", "left") \
                      .select("product_name", "category_name")
