@@ -13,21 +13,21 @@
 
 import math
 
-# Базовый класс для всех фигур
-class Shape:
-    def area(self):
+     # Базовый класс для всех фигур
+     class Shape:
+     def area(self):
         raise NotImplementedError("Нужно реализовать метод area()")
 
-# Класс круга
-class Circle(Shape):
+    # Класс круга
+    class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
 
     def area(self):
         return math.pi * self.radius ** 2
 
-# Класс треугольника
-class Triangle(Shape):
+    # Класс треугольника
+    class Triangle(Shape):
     def __init__(self, a, b, c):
         self.a = a
         self.b = b
@@ -41,17 +41,17 @@ class Triangle(Shape):
         sides = sorted([self.a, self.b, self.c])
         return math.isclose(sides[2]**2, sides[0]**2 + sides[1]**2)
 
-# Функция для вычисления площади любой фигуры
-def compute_area(shape):
-    return shape.area()
+    # Функция для вычисления площади любой фигуры
+    def compute_area(shape):
+       return shape.area()
 
-# Пример использования
-circle = Circle(5)
-triangle = Triangle(3, 4, 5)
+    # Пример использования
+   circle = Circle(5)
+     triangle = Triangle(3, 4, 5)
 
-print("Площадь круга:", compute_area(circle))              # 78.53981633974483
-print("Площадь треугольника:", compute_area(triangle))    # 6.0
-print("Треугольник прямоугольный?", triangle.is_right())  # True
+     print("Площадь круга:", compute_area(circle))              # 78.53981633974483
+     print("Площадь треугольника:", compute_area(triangle))    # 6.0
+     print("Треугольник прямоугольный?", triangle.is_right())  # True
 
 
 Практическое задание 2.
